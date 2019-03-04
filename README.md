@@ -1,6 +1,6 @@
 # bol-www
 
-The Frontend Application for [mancalive](https://secure-cliffs-35079.herokuapp.com/auth), a realtime mancala experiment.
+The Frontend Application, a realtime mancala experiment.
 
 ## TOC
 - [Requirements](#requirements)
@@ -19,7 +19,7 @@ The Frontend Application for [mancalive](https://secure-cliffs-35079.herokuapp.c
 
 ## Development
 
-**Clone and run the [backend application](https://github.com/lifenautjoe/bol)**
+**Clone and run the [backend application](https://github.com/denis554/bol)**
 
 It is a must.
 The development server will forward requests to it on port `8080`.
@@ -66,7 +66,7 @@ The build artifacts will be stored in the `dist/` directory.
 ## FAQ
 
 #### Backend code repository
-The backend code repository is [here](https://github.com/lifenautjoe/bol).
+The backend code repository is [here](https://github.com/denis554/bol).
 
 ## Useful links
 
@@ -79,4 +79,4 @@ MIT
 
 ## Author
 
-Joel Hernandez  | [Website](www.lifenautjoe.com)
+Denis Ignatenko  | [Website](www.blockdevtechnologies.com)
