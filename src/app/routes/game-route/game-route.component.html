@@ -1,0 +1,72 @@
+<div class="game-route background-brand color-ds-text-primary">
+    <div class="game-route__content">
+        <div class="padding-1x game__header">
+            <h1 [ngClass]="{'animated infinite flash': (!bootstrapped || isFinished)}">
+                {{refereeText}}
+            </h1>
+        </div>
+        <div class="padding-2x game__container background-black-alpha-3" [ngClass]="{'disabled': !bootstrapped || isFinished}">
+            <span class="game__close background-error btn--warn" (click)="quitGame()">X</span>
+            <div class="user-board user-board--opponent" #opponentBoard [ngClass]="{'user-board--turn animated infinite pulse': isOpponentTurn}">
+                <div class="user-board__score">
+                    <h2>Score: {{opponentScore}}</h2>
+                </div>
+                <h2 class="user-board__username">
+                    {{opponentUserName}}</h2>
+            </div>
+            <div class="game">
+                <div #opponentStorageSlotRef class="game-slot game-slot--storage game-slot--opponent">
+                    <div class="padding-1x cover-all">
+                        <div class="game-slot-content">
+                        </div>
+                        <div class="game-slot-stones-amount">
+                            0
+                        </div>
+                    </div>
+                </div>
+                <div class="game-slots__container">
+                    <div class="game-slots" #opponentSlotsRef>
+                        <div class="game-slot game-slot--opponent" *ngFor="let slot of userSlots">
+                            <div class="padding-1x cover-all">
+                                <div class="game-slot-content">
+                                </div>
+                                <div class="game-slot-stones-amount">
+                                    0
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div #userSlotsRef class="game-slots">
+                        <div class="game-slot game-slot--user" *ngFor="let slot of userSlots"
+                             [ngClass]="{'game-slot--disabled': isOpponentTurn}">
+                            <div class="padding-1x cover-all">
+                                <div class="game-slot-content">
+                                </div>
+                                <div class="game-slot-stones-amount">
+                                    0
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div #userStorageSlotRef class="game-slot game-slot--storage game-slot--user">
+                    <div class="padding-1x cover-all">
+                        <div class="game-slot-content">
+                        </div>
+                        <div class="game-slot-stones-amount">
+                            0
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="user-board user-board--user" #userBoard [ngClass]="{'user-board--turn': !isOpponentTurn}">
+                <div class="game-stone hidden" #stonePrototypeRef></div>
+                <div class="user-board__score">
+                    <h2>Score: {{userScore}}</h2>
+                </div>
+                <h2 class="user-board__username" [ngClass]="{'animated infinite pulse': !isOpponentTurn}">{{userName}}</h2>
+            </div>
+        </div>
+    </div>
+
+</div>

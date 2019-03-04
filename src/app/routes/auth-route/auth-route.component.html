@@ -1,0 +1,37 @@
+<div class="auth-route background-brand color-ds-text-primary">
+    <div class="auth-route-content">
+        <div class="auth-route-content-title">
+            <h1 class="auth-route-content-title__text">
+                manca<strong>live</strong>.
+            </h1>
+            <p class="font-small">A realtime mancala experiment by <a href="https://github.com/lifenautjoe/">@lifenautjoe</a>.
+            </p>
+        </div>
+        <form #userForm="ngForm" (ngSubmit)="logInUser()">
+            <div class="margin-bottom-1x auth-route-content__input">
+                <label for="username">
+                    Got a name?
+                </label>
+                <input
+                    class="font-center"
+                    type="text"
+                    name="username"
+                    id="username"
+                    pattern="^[a-zA-Z0-9 ]*"
+                    minlength="3"
+                    maxlength="12"
+                    required
+                    [disabled]="userIsLoggedInCheckInProgress || logInInProgress"
+                    [(ngModel)]="userName">
+            </div>
+            <div class="margin-bottom-2x font-tiny background-error padding" *ngIf="errorMessage">
+                {{errorMessage}}
+            </div>
+            <div>
+                <button type="submit" class="btn btn--primary btn--wide" [disabled]="userForm.invalid || logInInProgress">
+                    Enter
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

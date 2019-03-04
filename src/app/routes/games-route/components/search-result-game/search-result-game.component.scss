@@ -1,0 +1,46 @@
+
+.search-result-game{
+    display: flex;
+    border-bottom: solid 1px white;
+    font-size: 70%;
+
+    @media (min-width: 600px) {
+        font-size: 100%;
+    }
+}
+
+    .search-result-game__container{
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .search-result-game-details{
+        width: 70%;
+        display: flex;
+        align-items: center;
+    }
+
+        .search-result-game-details__name{
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            margin-left: 1rem;
+        }
+
+        .search-result-game-details__is-full{
+
+            color: orangered;
+
+            &--active{
+                color: greenyellow;
+            }
+        }
+
+    .search-result-game__actions{
+        display: flex;
+        justify-content: center;
+        @media (min-width: 600px) {
+            width: 20%;
+        }
+    }

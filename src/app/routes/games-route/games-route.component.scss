@@ -1,0 +1,64 @@
+
+.games-route {
+    display: flex;
+    width: 100%;
+    min-height: 100%;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.games-route-container{
+    @extend .games-route;
+}
+
+.games-title{
+    position: relative;
+    margin-top: 10%;
+}
+
+.games {
+    width: 100%;
+    max-width: 640px;
+    border-radius: 3px;
+}
+
+.games-hud-title{
+    margin-bottom: 0;
+}
+
+.games-hud{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+
+    .games-search{
+        width: 100%;
+        @media (min-width: 600px) {
+            width: 70%;
+
+        }
+
+    }
+
+    .games-actions {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 1rem;
+        @media (min-width: 600px) {
+            margin:0;
+            flex:1;
+        }
+
+        .btn:first-child{
+            margin-right: 1rem;
+        }
+    }
+
+.games-search-results{
+    margin: 2rem 0;
+    border-top: solid 1px white;
+}

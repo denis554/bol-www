@@ -1,0 +1,33 @@
+
+.auth-route{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
+    .auth-route-content{
+        padding: 2rem;
+        margin-top: 5%;
+        width: 100%;
+        max-width:640px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+        .auth-route-content-title{
+            margin-bottom: 2rem;
+        }
+
+            .auth-route-content-title__text{
+                font-weight: 500;
+            }
+
+        .auth-route-content__input{
+            width: 100%;
+            max-width: 300px;
+        }
+

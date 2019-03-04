@@ -1,0 +1,61 @@
+<div class="games-route background-brand color-ds-text-primary">
+    <div class="padding-1x games-route-container">
+        <div class="games-title">
+            <h1>Games Hub</h1>
+        </div>
+        <div class="games background-black-alpha-3 margin-1x">
+            <div *ngIf="!createGameViewVisible; else wantsToCreateGameTemplate;">
+                <div class="padding-1x">
+                    <h3 class="games-hud-title">Search game</h3>
+                </div>
+                <div class="games-hud padding-1x">
+                    <div class="games-search">
+                        <input type="text" name="search" id="search" placeholder="..." [(ngModel)]="gamesFilter">
+                    </div>
+                    <div class="games-actions">
+                        <button class="btn btn--secondary" [disabled]="gamesRefreshInProgress" (click)="refreshGames()">
+                            <i class="fas fa-sync-alt"></i>
+                        </button>
+                        <button class="btn btn--primary" type="button" (click)="showCreateGameView()">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="games-search-results">
+                <bol-search-result-game *ngFor="let game of games | searchGame:gamesFilter; trackBy:trackByGame"
+                                        [game]="game"></bol-search-result-game>
+            </div>
+        </div>
+        <ng-template #wantsToCreateGameTemplate>
+            <form #createGameForm="ngForm" (ngSubmit)="createGame()">
+                <div class="padding-1x">
+                    <h3 class="games-hud-title">Create game</h3>
+                </div>
+                <div class="games-hud padding-1x">
+                    <div class="games-search">
+                        <input type="text" name="gameName" id="gameName" placeholder="Game name"
+                               required
+                               pattern="^[a-zA-Z0-9 ]*"
+                               minlength="3"
+                               maxlength="12"
+                               [(ngModel)]="gameToCreateName"
+                               #gameName="ngModel">
+                    </div>
+                    <div class="games-actions">
+                        <button type="button" class="btn btn--warn" (click)="hideCreateGameView()">
+                            <i class="fas fa-times"></i>
+                        </button>
+                        <button type="submit" class="btn btn--primary" [disabled]="(createGameForm.invalid) || createGameInProgress">
+                            <i class="fas fa-check"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="margin-1x font-small background-error padding-1x font-center"
+                     *ngIf="createGameErrorMessage">
+                    {{createGameErrorMessage}}
+                </div>
+            </form>
+        </ng-template>
+    </div>
+</div>

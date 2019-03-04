@@ -1,0 +1,32 @@
+
+* {
+    letter-spacing: 0.08rem;
+}
+
+.font-primary {
+    font-family: 'Dosis', sans-serif;
+}
+
+.font-secondary {
+    font-family: 'Roboto Slab', serif;
+}
+
+.font-tiny {
+    font-size: 50%;
+}
+
+.font-small {
+    font-size: 80%;
+}
+
+.font-large {
+    font-size: 140%;
+}
+
+.font-center {
+    text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    @extend .font-primary;
+}

@@ -1,0 +1,19 @@
+<div class="search-result-game padding-1x">
+    <div class="search-result-game__container">
+        <div class="search-result-game-details">
+            <i class="fas fa-circle search-result-game-details__is-full"
+               [ngClass]="{'search-result-game-details__is-full--active': !game.isFull()}"></i>
+            <div class="search-result-game-details__name">
+                {{game.getName()}}
+            </div>
+        </div>
+        <div class="search-result-game__actions">
+            <button class="btn btn--primary" (click)="onWantsToJoinGame(game)" [disabled]="game.isFull()" *ngIf="!game.isFull(); else gameFullTemplate;">
+                Join
+            </button>
+            <ng-template #gameFullTemplate>
+                <button class="btn btn--primary" disabled>Full</button>
+            </ng-template>
+        </div>
+    </div>
+</div>
